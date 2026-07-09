@@ -1,0 +1,24 @@
+ {
+  "doctype": "Workspace",
+  "name": "Storage Operation",
+  "label": "Storage Operation",
+  "title": "Storage Operation",
+  "module": "Storage Operation",
+  "public": 1,
+  "is_hidden": 0,
+  "for_user": "",
+  "icon": "folder-normal",
+  "indicator_color": "blue",
+  "sequence_id": 1,
+  "content": "[{\"id\":\"shortcut-sar\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Storage Agreement Request\",\"col\":4}}]",
+  "shortcuts": [
+   {
+    "doctype": "Workspace Shortcut",
+    "label": "Storage Agreement Request",
+    "link_to": "Storage Agreement Request",
+    "type": "DocType",
+    "color": "Blue"
+   }
+  ],
+  "links": []
+ }
