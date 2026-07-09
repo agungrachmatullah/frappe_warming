@@ -1,0 +1,13 @@
+{
+    "doctype": "Report",
+    "name": "Pending Approval",
+    "report_name": "Pending Approval",
+    "report_type": "Script Report",
+    "module": "Storage Operation",
+    "is_standard": "Yes",
+    "ref_doctype": "Storage Agreement Request",
+    "roles": [
+        {"role": "Stock User"},
+        {"role": "Stock Manager"}
+    ]
+}
