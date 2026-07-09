@@ -1,0 +1,52 @@
+{
+    "doctype": "DocType",
+    "name": "Storage Agreement Request",
+    "module": "Storage Operation",
+    "autoname": "naming_series:",
+    "naming_series": "SAR-.YYYY.-",
+    "track_changes": 1,
+    "field_order": [
+        "naming_series",
+        "partner_id",
+        "partner_mobile",
+        "detail_break",
+        "date_start",
+        "date_end",
+        "column_break1",
+        "origin",
+        "request_break",
+        "request_package_ids",
+        "more_info_tab",
+        "info_section",
+        "status"
+    ],
+    "fields": [
+        {"bold": 1, "fieldname": "naming_series", "fieldtype": "Select", "options": "SAR-.YYYY.-", "hidden": 1},
+        {"bold": 1, "fieldname": "partner_id", "fieldtype": "Link", "label": "Partner", "options": "Customer", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
+        {"fieldname": "origin", "fieldtype": "Data", "label": "Origin / Reference", "in_standard_filter": 1},
+        {"fieldname": "date_start", "fieldtype": "Date", "label": "Est. Date IN", "in_list_view": 1, "reqd": 1},
+        {"fieldname": "date_end", "fieldtype": "Date", "label": "Est. Date OUT", "in_list_view": 1, "reqd": 1},
+        {"fieldname": "partner_mobile", "fieldtype": "Data", "default": "-", "fetch_from": "partner_id.customer_primary_contact.mobile_no", "label": "Contact", "read_only": 1},
+        {"default": "Draft", "fieldname": "status", "fieldtype": "Select", "options": "\nDraft\nPending Approval\nApproved\nRejected\nReady\nClosed", "read_only": 1, "in_list_view": 1, "no_copy": 1, "in_standard_filter": 1, "label": "Status", "reqd": 1},
+
+        {
+            "fieldname": "request_package_ids",
+            "fieldtype": "Table",
+            "label": "Request Packages",
+            "options": "Request Package",
+            "reqd": 1
+        },
+
+
+        {"fieldname": "column_break1", "fieldtype": "Column Break", "oldfieldtype": "Column Break", "print_width": "50%", "width": "50%"},
+        {"fieldname": "detail_break", "fieldtype": "Column Break"},
+        {"fieldname": "request_break", "fieldtype": "Section Break"},
+        {"fieldname": "info_section", "fieldtype": "Section Break", "label": "Order Status", "collapsible": 1},
+
+        {"fieldname": "more_info_tab", "fieldtype": "Tab Break", "label": "More Info"}
+    ],
+    "permissions": [
+        {"role": "Stock User", "read": 1, "write": 1, "create": 1, "report": 1},
+        {"role": "Stock Manager", "read": 1, "write": 1, "submit": 1, "cancel": 1, "report": 1}
+    ]
+}
